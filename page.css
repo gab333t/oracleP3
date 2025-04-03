@@ -5,6 +5,11 @@ body {
     grid-template-columns: 1fr 1fr; 
     gap: 2vw; 
     overflow: auto;
+    min-height: 100vh;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 h1 {
@@ -86,7 +91,7 @@ select {
 
 .stretch-vertical {
     transform: scaleX(0.55);
-    margin-bottom: 2vw; /* Reduced from 5vw to 2vw */
+    margin-bottom: 2vw;
     display: inline-block;
     width: 100%;
     margin-left: -15%; 
@@ -146,7 +151,6 @@ img {
     pointer-events: none;
     -webkit-user-drag: none;
     grid-column: 1; 
-    display: flex;
 }
 
 #result-image {
@@ -157,9 +161,10 @@ img {
     transform-style: preserve-3d;
     pointer-events: none;
     -webkit-user-drag: none;
-    grid-column: 1; 
-    display: flex;
+    grid-column: 1;
+    grid-row: 1;
     justify-self: center;
+    align-self: center; 
     transition: opacity 0.15s ease-in-out;
 }
 
@@ -200,6 +205,10 @@ img {
     a {
         font-size: 3.25vw;
     }
+
+    .stretch-horizontal {
+        margin-top: .5vw;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -218,9 +227,12 @@ img {
         line-height: 3.75vw;
     }
 
-
     a {
         font-size: 3.5vw;
+    }
+
+    .stretch-horizontal {
+        margin-top: -1vw;
     }
 }
 
@@ -252,14 +264,16 @@ img {
     a {
         font-size: 5.5vw;
     }
+
 }
 
 @media screen and (max-width: 600px) {
-    body {
+   body {
         grid-template-columns: 1fr; 
-        grid-template-rows: auto auto;
+        grid-template-rows: auto auto auto; 
         gap: 5vh; 
         overflow: auto;
+        padding-bottom: 5vw; 
     }
     
     img, #result-image {
@@ -267,19 +281,24 @@ img {
         grid-row: 1; 
         width: 45%; 
         justify-self: center; 
-        margin-top: 15vw;
-        margin-bottom: 2vw;
+        margin-top: 18vw;
+        align-self: flex-start; 
     }
     
-    h1, h3, .stretch-horizontal {
+    h1, h3 {
         grid-column: 1; 
         grid-row: 2;
     }
     
     .stretch-horizontal {
-        position: absolute;
-        bottom: -38vw;
-        margin-top: 0;
+        grid-column: 1;
+        grid-row: 3;
+        position: relative;
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        justify-self: center;
+        bottom: auto;
     }
 
     .stretch-vertical {
@@ -291,18 +310,22 @@ img {
     h3 {
         font-size: 7.5vw;
         line-height: 7vw;
-        margin-top: 0;
-        margin-bottom: 20vw;
+        margin-top: 8vw;;
+        margin-bottom: 5vw; 
     }
 
     a {
-        position: absolute;
-        bottom: 1px;
-        margin-top: 7vw;
+        position: relative;
+        font-size: 7vw;
+        margin-top: 2vw;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #submit-btn {
-        left: 16vw;
+        left: auto; 
+        justify-self: center;
+        margin-top: 10vw;
     }
     
     select {
@@ -322,6 +345,6 @@ img {
     }
     
     .stretch-vertical {
-        margin-bottom: -25%;
+        margin-bottom: -10%;
     }
 }
