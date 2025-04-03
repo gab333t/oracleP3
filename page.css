@@ -85,8 +85,10 @@ select {
 
 .stretch-vertical {
     transform: scaleX(0.55);
-    margin-bottom: -55%;
+    margin-bottom: -45%; /* Adjust from -55% to accommodate new scale */
     display: inline-block;
+    width: 130%; /* Make the container wider */
+    margin-left: -15%; /* Offset to center the wider container */
 }
 
 .stretch-horizontal {
@@ -280,17 +282,21 @@ img {
     }
     
     .stretch-horizontal {
-        left: 0;
-        right: 0;
-        text-align: center;
-        bottom: -32.5vw;
+        bottom: -38vw; 
+    }
+
+    .stretch-vertical {
+        width: 115%; 
+        margin-left: -7.5%; /* Less offset needed */
+        margin-bottom: -20%; /* Less negative margin needed */
     }
     
     h3 {
-        font-size: 7.5vw; 
+        /* Your existing mobile h3 styles */
+        font-size: 7.5vw;
         line-height: 7vw;
         margin-top: 0;
-        margin-bottom: 15vw; 
+        margin-bottom: 20vw; /* Increased to account for longer text */
     }
 
     a {
