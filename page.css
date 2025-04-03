@@ -286,17 +286,16 @@ img {
     }
 
     .stretch-vertical {
-        width: 115%; 
-        margin-left: -7.5%; /* Less offset needed */
-        margin-bottom: -20%; /* Less negative margin needed */
+        width: 120%; 
+        margin-left: -10%;
+        margin-bottom: -20%;
     }
     
     h3 {
-        /* Your existing mobile h3 styles */
         font-size: 7.5vw;
         line-height: 7vw;
         margin-top: 0;
-        margin-bottom: 20vw; /* Increased to account for longer text */
+        margin-bottom: 20vw;
     }
 
     a {
