@@ -4,7 +4,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 2vw; 
-    overflow: hidden;
+    overflow: auto;
 }
 
 h1 {
@@ -43,6 +43,7 @@ select {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 3.5vw;
     line-height: 3.25vw;
+    font-weight: 800;
     font-optical-sizing: auto;
     letter-spacing: -0.15vw;
     text-decoration: none;
@@ -85,61 +86,55 @@ select {
 
 .stretch-vertical {
     transform: scaleX(0.55);
-    margin-bottom: -45%; /* Adjust from -55% to accommodate new scale */
+    margin-bottom: 2vw; /* Reduced from 5vw to 2vw */
     display: inline-block;
-    width: 130%; /* Make the container wider */
-    margin-left: -15%; /* Offset to center the wider container */
+    width: 100%;
+    margin-left: -15%; 
 }
 
 .stretch-horizontal {
-    transform: scaleY(0.85);
+    transform: scaleY(0.8);
     transform-origin: 0 0;
-    display: inline-block;
-    position: absolute;
-    background-color: #EDEDED;
-    color: black;
-    font-family: "Cormorant Garamond", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
     letter-spacing: -0.15vw;
     font-style: normal;
-    text-decoration: none;
-    padding: 0.2vw 0.4vw;
+    padding: 0.2vw 0.5vw;
     text-align: center;
     width: fit-content;
-    margin: 0; 
     cursor: pointer;
     grid-column: 2;
+    margin-top: 0.5vw;
     margin-left: 22%;
-    bottom: 1px;
     transition: opacity 0.15s ease-in-out;
 }
 
 a {
-    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    font-weight: 600;
     background-color: #EDEDED;
     color: black;
-    font-family: "Cormorant Garamond", serif;
     font-optical-sizing: auto;
-    font-size: 3vw;
-    font-weight: 500;
     letter-spacing: -0.15vw;
     font-style: normal;
-    text-decoration: none;
+    text-decoration: underline;
     padding: 0.2vw 0.4vw;
     text-align: center;
     width: fit-content;
-    margin: 0; 
     cursor: pointer;
     grid-column: 2;
     margin-left: 22%;
-    bottom: 1px;
+    display: inline-block;
+    position: relative;
 }
 
 .button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+#submit-btn {
+    left: -6.75vw;
 }
 
 img {
@@ -282,7 +277,9 @@ img {
     }
     
     .stretch-horizontal {
-        bottom: -38vw; 
+        position: absolute;
+        bottom: -38vw;
+        margin-top: 0;
     }
 
     .stretch-vertical {
@@ -299,8 +296,13 @@ img {
     }
 
     a {
-        font-size: 6.5vw;
+        position: absolute;
+        bottom: 1px;
         margin-top: 7vw;
+    }
+
+    #submit-btn {
+        left: 16vw;
     }
     
     select {
@@ -316,9 +318,10 @@ img {
     
     .catnip:checked::after {
         font-size: 2.5vw;
+        padding: 0.25vw 1.25vw;
     }
     
     .stretch-vertical {
-        margin-bottom: -25%; 
+        margin-bottom: -25%;
     }
 }

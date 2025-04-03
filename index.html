@@ -79,7 +79,17 @@
                 confirmationModal.style.display = "none";
             }
         });
+
+        function checkViewportWidth() {
+            if (window.innerWidth <= 600) {
+                h1Text.style.display = "block";
+            } else {
+                h1Text.style.display = "none";
+            }
+        }
+
+        checkViewportWidth();
+        window.addEventListener("resize", checkViewportWidth);
     });
     </script>
-
 </html>

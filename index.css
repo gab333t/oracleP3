@@ -58,7 +58,7 @@ h3 {
 }
 
 .stretch-horizontal {
-    transform: scaleY(0.85);
+    transform: scaleY(0.8);
     transform-origin: 0 0;
     margin-bottom: -85%;
     display: inline-block;
@@ -67,13 +67,13 @@ h3 {
 a {
     background-color: #EDEDED;
     color: black;
-    font-family: "Cormorant Garamond", serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-optical-sizing: auto;
     font-size: 3vw;
-    font-weight: 500;
-    letter-spacing: -0.15vw;
+    font-weight: 600;
+    letter-spacing: -0.2vw;
     font-style: normal;
-    text-decoration: none;
+    text-decoration: underline;
     padding: 0.2vw 0.4vw;
     text-align: center;
     width: fit-content;
@@ -116,9 +116,10 @@ a {
 
 h4 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.25vw;
-    letter-spacing: -0.06vw;
-    line-height: 1.6vw;
+    font-size: 1.5vw;
+    letter-spacing: -0.1vw;
+    line-height: 1.5vw;
+    font-weight: 800;
 }
 
 .black {
@@ -135,15 +136,17 @@ h4 {
 }
 
 .modal-button {
-    font-family: "Cormorant Garamond", serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: black;
     color: red;
     padding: 0.5vw 1vw;
     border: none;
     cursor: pointer;
-    font-size: 1.5vw;
+    text-decoration: underline;
+    font-size: 2vw;
     font-weight: 600;
     margin: 10px;
+    transform: scaleY(0.8);
 }
 
 @media screen and (max-width: 1400px) {
@@ -253,7 +256,7 @@ h4 {
     }
 
     .button {
-        bottom: 15vw;
+        bottom: 1.5vw;
     }
 
     .modal-button {
@@ -264,5 +267,4 @@ h4 {
         font-weight: 600;
         margin: 2vw;
     }
-
-  }
+}
