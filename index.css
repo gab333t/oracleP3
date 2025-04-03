@@ -1,0 +1,264 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center; 
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #EDEDED;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    font-optical-sizing: auto;
+    letter-spacing: -0.15vw;
+    border: 0.5vw solid #EDEDED;
+    padding: 0.5vw 1vw;
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.cat {
+    display: block;
+    margin: auto;
+    width: 100%;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+h3 {
+    color: #EDEDED;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.5vw;
+    font-optical-sizing: auto;
+    letter-spacing: -0.15vw;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    display: block;  
+    margin-top: 0.5vw;
+    white-space: nowrap;
+}
+
+.stretch-vertical {
+    transform: scaleX(0.55);
+    margin-bottom: -55%;
+    display: inline-block;
+}
+
+.stretch-horizontal {
+    transform: scaleY(0.85);
+    transform-origin: 0 0;
+    margin-bottom: -85%;
+    display: inline-block;
+}
+
+a {
+    background-color: #EDEDED;
+    color: black;
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-size: 3vw;
+    font-weight: 500;
+    letter-spacing: -0.15vw;
+    font-style: normal;
+    text-decoration: none;
+    padding: 0.2vw 0.4vw;
+    text-align: center;
+    width: fit-content;
+    margin: 0; 
+    cursor: pointer;
+}
+
+.container {
+    position: absolute;
+    top: 47.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    position: absolute;
+    bottom: 1.5vw; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modal {
+    color: black;
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25vw;
+    letter-spacing: -0.06vw;
+    line-height: 1.6vw;
+}
+
+.black {
+    color: black;
+}
+
+.modal-content {
+    background-color: red;
+    color: black;
+    padding: 20px;
+    width: 90%;
+    max-width: 750px;
+    text-align: center;
+}
+
+.modal-button {
+    font-family: "Cormorant Garamond", serif;
+    background-color: black;
+    color: red;
+    padding: 0.5vw 1vw;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5vw;
+    font-weight: 600;
+    margin: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+    .cat {
+        width: 700px;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+
+    h3 {
+        font-size: 3.25vw;
+        margin-top: 0.75vw;
+    }
+
+    h4 {
+        font-size: 1.4vw;
+        letter-spacing: -0.08vw;
+        line-height: 1.8vw;
+    }
+
+    a {
+        font-size: 3.25vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cat {
+        width: 650px;
+    }
+
+    h1 {
+        font-size: 5.25vw;
+    }
+
+    h3 {
+        font-size: 3.5vw;
+        margin-top: 1vw;
+    }
+
+    a {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .cat {
+        width: 600px;
+    }
+
+    h1 {
+        font-size: 5.5vw;
+    }
+
+    h3 {
+        font-size: 4vw;
+        margin-top: 1.25vw;
+    }
+
+    a {
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cat {
+        width: 550px;
+    }
+
+    h1 {
+        font-size: 5.75vw;
+    }
+
+    h3 {
+        font-size: 4.5vw;
+        margin-top: 1.5vw;
+    }
+
+    a {
+        font-size: 5.5vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cat {
+        width: 400px;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+
+    h3 {
+        font-size: 7.5vw;
+        margin-top: 1.75vw;
+    }
+
+    h4 {
+        font-size: 2.5vw;
+        letter-spacing: -0.1vw;
+        line-height: 3vw;
+    }
+
+    a {
+        font-size: 6.5vw;
+    }
+
+    .modal-button {
+        padding: 0.5vw 1vw;
+        border: none;
+        cursor: pointer;
+        font-size: 4.5vw;
+        font-weight: 600;
+        margin: 2vw;
+    }
+
+  }

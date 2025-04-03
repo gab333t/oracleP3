@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CAT HITMAN</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <meta name="description" content="CAT HITMAN – HOME">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <h3 class="stretch-vertical">CAT HITMAN – THE PURRFECT SOLUTION</h3>
+
+        <div class="container">
+            <img class="cat" src="img/cat.png" alt="Pixelated cat face; credit to David Lee for original image.">
+            <h1>LOOK WHAT THE CAT DRAGGED IN</h1>
+        </div>
+
+        <div class="button">
+            <a class="stretch-horizontal" href="#" id="bountyButton">ENTER</a>
+        </div>
+
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <h3 class="stretch-vertical"><span class="black">WARNING</span></h3>
+                <h4 class="stretch-horizontal">BY ENTERING THIS SITE YOU UNDERSTAND THE REPERCUSSIONS OF THE SERVICES BEING PROVIDED TO YOU; SILENCE IS DEADLY, CONTRACTS ARE SACRED, AND LOYALTY
+                    IS ONLY AS STRONG AS THE CLAWS THAT ENFORCE IT. ENTER AT YOUR OWN RISK.
+                    <br><br>
+                    DON'T WORRY, EVERYTHING HERE IS JUST SATIRICAL.
+                    <br><br>
+                    DO YOU WISH TO PROCEED?
+                </h4>
+                <button id="confirmButton" class="modal-button">YES</button>
+                <button id="cancelButton" class="modal-button cancel-button">NO</button>
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const bountyButton = document.querySelector("#bountyButton");
+        const confirmationModal = document.querySelector("#confirmationModal");
+        const confirmButton = document.querySelector("#confirmButton");
+        const cancelButton = document.querySelector("#cancelButton");
+        const h1Text = document.querySelector(".container h1");
+
+        h1Text.style.display = "none";
+
+        bountyButton.addEventListener("mouseenter", function () {
+            h1Text.style.display = "block";
+        });
+
+        bountyButton.addEventListener("mouseleave", function () {
+            h1Text.style.display = "none";
+        });
+
+        bountyButton.addEventListener("click", function (e) {
+            e.preventDefault(); 
+            confirmationModal.style.display = "flex"; 
+        });
+
+        confirmButton.addEventListener("click", function () {
+            window.location.href = "page.html"; 
+        });
+
+        cancelButton.addEventListener("click", function () {
+            confirmationModal.style.display = "none"; 
+        });
+
+        window.addEventListener("click", function (event) {
+            if (event.target === confirmationModal) {
+                confirmationModal.style.display = "none";
+            }
+        });
+    });
+    </script>
+
+</html>

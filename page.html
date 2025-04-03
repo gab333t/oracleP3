@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CAT HITMAN – INTEREST FORM</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <meta name="description" content="CAT HITMAN – INTEREST FORM">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="page.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <h3 class="stretch-vertical">
+            INTEREST FORM 
+            <br><br>
+            I'M HERE TODAY TO PLACE A HIT ON A 
+            <span class="select-container">
+                <select class="animal" name="">
+                    <option value="" selected hidden>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                    <option value="RAT">RAT</option>
+                    <option value="PIGEON">PIGEON</option>
+                    <option value="SNAKE">SNAKE</option>
+                </select>
+            </span>.
+            IDEALLY I WOULD PREFER THAT YOU USE YOUR
+            <span class="select-container">
+                <select class="weapon" name="">
+                    <option value="" selected hidden>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                    <option value="FANGS">CLAWS</option>
+                    <option value="CLAWS">FANGS</option>
+                    <option value="TAIL">TAIL</option>
+                </select>
+            </span> TO GET THE JOB DONE.
+
+            <br><br>
+            WILL YOU PROVIDE US WITH CATNIP AFTERWARDS? <input type="checkbox" class="catnip" name="check" />
+            <br><br>
+        </h3>
+
+        <a class="stretch-horizontal" id="submit-btn">SUBMIT</a>
+
+        <img id="result-image" src="img/undefined.png" alt="Image has not been set, is undefined.">
+
+    </body>
+
+    <script>
+document.querySelector(".stretch-horizontal").addEventListener("click", function() {
+    const submitButton = document.querySelector(".stretch-horizontal");
+    submitButton.style.pointerEvents = "none";
+    
+    const animal = document.querySelector(".animal").value;
+    const weapon = document.querySelector(".weapon").value;
+    const catnip = document.querySelector(".catnip").checked ? "yes" : "no";
+
+    let imagePath = "img/undefined.png"; // Default image
+
+    if (animal === "RAT" && weapon === "FANGS" && catnip === "yes") {
+        imagePath = "img/rat-claws-yes.png";
+    }
+    if (animal === "RAT" && weapon === "FANGS" && catnip === "no") {
+        imagePath = "img/rat-claws-no.png";
+    }
+    if (animal === "RAT" && weapon === "CLAWS" && catnip === "yes") {
+        imagePath = "img/rat-fangs-yes.png";
+    }
+    if (animal === "RAT" && weapon === "CLAWS" && catnip === "no") {
+        imagePath = "img/rat-fangs-no.png";
+    }
+    if (animal === "RAT" && weapon === "TAIL" && catnip === "yes") {
+        imagePath = "img/rat-tail-yes.png";
+    }
+    if (animal === "RAT" && weapon === "TAIL" && catnip === "no") {
+        imagePath = "img/rat-tail-no.png";
+    }
+    if (animal === "PIGEON" && weapon === "FANGS" && catnip === "yes") {
+        imagePath = "img/pigeon-claws-yes.png";
+    }
+    if (animal === "PIGEON" && weapon === "FANGS" && catnip === "no") {
+        imagePath = "img/pigeon-claws-no.png";
+    }
+    if (animal === "PIGEON" && weapon === "CLAWS" && catnip === "yes") {
+        imagePath = "img/pigeon-fangs-yes.png";
+    }
+    if (animal === "PIGEON" && weapon === "CLAWS" && catnip === "no") {
+        imagePath = "img/pigeon-fangs-no.png";
+    }
+    if (animal === "PIGEON" && weapon === "TAIL" && catnip === "yes") {
+        imagePath = "img/pigeon-tail-yes.png";
+    }
+    if (animal === "PIGEON" && weapon === "TAIL" && catnip === "no") {
+        imagePath = "img/pigeon-tail-no.png";
+    }
+    if (animal === "SNAKE" && weapon === "FANGS" && catnip === "yes") {
+        imagePath = "img/snake-claws-yes.png";
+    }
+    if (animal === "SNAKE" && weapon === "FANGS" && catnip === "no") {
+        imagePath = "img/snake-claws-no.png";
+    }
+    if (animal === "SNAKE" && weapon === "CLAWS" && catnip === "yes") {
+        imagePath = "img/snake-fangs-yes.png";
+    }
+    if (animal === "SNAKE" && weapon === "CLAWS" && catnip === "no") {
+        imagePath = "img/snake-fangs-no.png";
+    }
+    if (animal === "SNAKE" && weapon === "TAIL" && catnip === "yes") {
+        imagePath = "img/snake-tail-yes.png";
+    }
+    if (animal === "SNAKE" && weapon === "TAIL" && catnip === "no") {
+        imagePath = "img/snake-tail-no.png";
+    }
+
+    const imgElement = document.querySelector("img");
+    
+    imgElement.style.opacity = "0.5";
+    
+    setTimeout(() => {
+        if (document.getElementById("clip-path-style")) {
+            document.getElementById("clip-path-style").remove();
+        }
+        
+        imgElement.src = "img/refresh.gif";
+        
+        const borderWidth = parseFloat(getComputedStyle(imgElement).borderWidth);
+        const styleElement = document.createElement("style");
+        styleElement.id = "clip-path-style";
+        styleElement.textContent = `
+            #result-image {
+                filter: invert(1);
+                clip-path: inset(${borderWidth}px);
+            }
+        `;
+        document.head.appendChild(styleElement);
+        
+        imgElement.style.opacity = "1";
+        
+        setTimeout(() => {
+            imgElement.style.opacity = "0.5";
+            
+            setTimeout(() => {
+                document.getElementById("clip-path-style").remove();
+                imgElement.src = imagePath;
+                
+                setTimeout(() => {
+                    imgElement.style.opacity = "1";
+                    
+                    submitButton.style.pointerEvents = "auto";
+                    submitButton.style.opacity = "1";
+                }, 30);
+            }, 150);
+        }, 500);
+    }, 150);
+});
+    </script>
+    
+</html>
